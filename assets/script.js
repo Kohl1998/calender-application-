@@ -2,7 +2,19 @@
 var currentTime = $('#currentDay');
 
 // Sets text to current time using moment.js 
-currentTime.text(moment().format("DDD, MMM, YYYY, hh:mm:ss", 1000));
+$(document).ready(function () {
+    var datetime = $('#currentDay'),
+        date = moment(new Date()),
+        update = function(){
+            currentTime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+        };
+    update();
+    setInterval(update, 1000);
+});
+
+// currentTime.text(moment().format("DDD, MMM, YYYY, hh:mm:ss", 1000));
+
+
 
 // Appends it to text field 
 currentTime.appendTo('.currentDay')
