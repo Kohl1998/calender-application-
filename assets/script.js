@@ -12,9 +12,6 @@ $(document).ready(function () {
     setInterval(update, 1000);
 });
 
-// currentTime.text(moment().format("DDD, MMM, YYYY, hh:mm:ss", 1000));
-
-
 
 // Appends it to text field 
 currentTime.appendTo('.currentDay')
@@ -45,7 +42,7 @@ var threePM = $('#3pm');
 var fourPM = $('#4pm');
 var fivePM = $('#5pm'); 
 
-
+// To set the class to hour for css styles
 nineAM.text(Times[0]).attr("class", "hour")
 tenAm.text(Times[1]).attr("class", "hour")
 elevenAm.text(Times[2]).attr("class", "hour")
@@ -56,9 +53,33 @@ threePM.text(Times[6]).attr("class", "hour")
 fourPM.text(Times[7]).attr("class", "hour")
 fivePM.text(Times[8]).attr("class", "hour")
 
+// testing event listener on row2
+var saveButton = $('#row');
 
+// Responds to user clicking any of the buttons 
+$('button').on('click', function () {
+    // Textarea must have a value
+    var messageOne = $('#nineAm').val();
+    var messageTwo = $('#tenAm').val();
+    var messageThree = $('#elevenAm').val();
+    var messageFour = $('#Twelve').val();
+    var messageFive = $('#onePM').val();
+    var messageSix = $('#twoPM').val();
+    var messageSeven = $('#threePM').val();
+    var messageEight = $('#fourPM').val();
+    var messageNine = $('#fivePM').val();
+    // set local storage for each event ()
+    
+})
 
-/* for  (var i = 0; i < Times.length; i++) {
-    var timeHolders = $('<p>');
-    timeHolders.text(Times[i]).appendTo('div');
-} */
+// save data to local storage 
+
+nineAM.html() = localStorage.getItem("messageOne"); 
+tenAmAM.html() = localStorage.getItem("messageTwo"); 
+elevenAm.html() = localStorage.getItem("messageThree"); 
+Twelve.html() = localStorage.getItem("messageFour"); 
+onePM.html() = localStorage.getItem("messageFive"); 
+twoPm.html() = localStorage.getItem("messageSix"); 
+threePM.html() = localStorage.getItem("messageSeven"); 
+fourPM.html() = localStorage.getItem("messageEight"); 
+fivePM.html() = localStorage.getItem("messageNine"); 
