@@ -10,6 +10,26 @@ $(document).ready(function () {
         };
     update();
     setInterval(update, 1000);
+    
+    // Selectors for textarea elements
+    var Userdata = {
+        Events: {
+            inputOne: $('#nineAm').val(),
+            inputTwo: $('#tenAm').val(),
+            inputThree: $('#elevenAm').val(),
+            inputFour: $('#Twelve').val(),
+            inputFive: $('#onePM').val(),
+            inputSix: $('#twoPm').val(),
+            inputSeven: $('#threePM').val(),
+            inputEight: $('#fourPM').val(),
+            inputNine: $('#fivePM').val(),
+        }
+    }
+    // event listener to store user value
+    $('button').on('click', function () {
+        var eventone = JSON.stringify(Userdata.Events.inputOne);
+        localStorage.setItem("eventone", eventone) 
+})
 });
 
 
@@ -53,30 +73,6 @@ threePM.text(Times[6]).attr("class", "hour")
 fourPM.text(Times[7]).attr("class", "hour")
 fivePM.text(Times[8]).attr("class", "hour")
 
-
-// testing event listener on row2
-var saveButton = $('#row');
-
-// Responds to user clicking any of the buttons 
-$('button').on('click', function () {
-    var Userdata = {
-        Events: {
-            inputOne: $('#nineAm').val(),
-            inputTwo: $('#tenAm').val(),
-            inputThree: $('#elevenAm').val(),
-            inputFour: $('#Twelve').val(),
-            inputFive: $('#onePM').val(),
-            inputSix: $('#twoPm').val(),
-            inputSeven: $('#threePM').val(),
-            inputEight: $('#fourPM').val(),
-            inputNine: $('#fivePM').val(),
-        }
-    }
-    var eventone = JSON.stringify(Userdata.Events.inputOne);
-    localStorage.setItem("eventone", eventone) 
-    var eventSaved = JSON.parse(localStorage.getItem("eventone"))
-    $('#nineAm').val() = eventSaved
-})
 
 // $('#nineAm').html() = localStorage.getItem("eventone");
 
