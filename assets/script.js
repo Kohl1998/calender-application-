@@ -25,7 +25,7 @@ $(document).ready(function () {
             inputNine: $('#fivePM').val(),
         }
     }
-    // event listener to store user value
+    // event listener to store user
     $('button').on('click', function () {
         var eventone = JSON.stringify(Userdata.Events.inputOne);
         localStorage.setItem("eventone", eventone) 
@@ -74,7 +74,7 @@ fourPM.text(Times[7]).attr("class", "hour")
 fivePM.text(Times[8]).attr("class", "hour")
 
 
-// $('#nineAm').html() = localStorage.getItem("eventone");
+$('#nineAm').html() = localStorage.getItem("fucking hell");
 
 // console.log(eventone)
 
