@@ -32,7 +32,5 @@ Please refer to the LICENSE in the repo.
 
 The application isn't fully functional, I still have a few things to update. 
 
-Click this option and then look at the top of the HTML file, and you will see a symbol with '>>', which will have the option 'console'. Click this and you will find the information. 
-
 ## Link
 
