@@ -5,7 +5,7 @@ var currentTime = $('#currentDay');
 $(document).ready(function () {
     var datetime = $('#currentDay'),
         date = moment(new Date()),
-        update = function(){
+        update = function () {
             currentTime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
         };
     update();
@@ -36,11 +36,11 @@ var nineAM = $('#9am');
 var tenAm = $('#10am');
 var elevenAm = $('#11am');
 var Twelve = $('#12pm');
-var onePM = $('#1pm') ;
+var onePM = $('#1pm');
 var twoPm = $('#2pm');
 var threePM = $('#3pm');
 var fourPM = $('#4pm');
-var fivePM = $('#5pm'); 
+var fivePM = $('#5pm');
 
 // To set the class to hour for css styles
 nineAM.text(Times[0]).attr("class", "hour")
@@ -53,33 +53,38 @@ threePM.text(Times[6]).attr("class", "hour")
 fourPM.text(Times[7]).attr("class", "hour")
 fivePM.text(Times[8]).attr("class", "hour")
 
+
 // testing event listener on row2
 var saveButton = $('#row');
 
 // Responds to user clicking any of the buttons 
 $('button').on('click', function () {
-    // Textarea must have a value
-    var messageOne = $('#nineAm').val();
-    var messageTwo = $('#tenAm').val();
-    var messageThree = $('#elevenAm').val();
-    var messageFour = $('#Twelve').val();
-    var messageFive = $('#onePM').val();
-    var messageSix = $('#twoPM').val();
-    var messageSeven = $('#threePM').val();
-    var messageEight = $('#fourPM').val();
-    var messageNine = $('#fivePM').val();
-    // set local storage for each event ()
-    
+    var Userdata = {
+        Events: {
+            inputOne: $('#nineAm').val(),
+            inputTwo: $('#tenAm').val(),
+            inputThree: $('#elevenAm').val(),
+            inputFour: $('#Twelve').val(),
+            inputFive: $('#onePM').val(),
+            inputSix: $('#twoPm').val(),
+            inputSeven: $('#threePM').val(),
+            inputEight: $('#fourPM').val(),
+            inputNine: $('#fivePM').val(),
+        }
+    }
+    var eventone = JSON.stringify(Userdata.Events.inputOne);
+    localStorage.setItem("eventone", eventone) 
+    var eventSaved = JSON.parse(localStorage.getItem("eventone"))
+    $('#nineAm').val() = eventSaved
 })
 
+// $('#nineAm').html() = localStorage.getItem("eventone");
+
+// console.log(eventone)
+
+/* var event_serialized = JSON.stringify(Userdata.Events[0]);
+console.log(event_serialized) */
+
+// localStorage.setItem("messageOne", JSON.stringify(messageOne))
 // save data to local storage 
 
-nineAM.html() = localStorage.getItem("messageOne"); 
-tenAmAM.html() = localStorage.getItem("messageTwo"); 
-elevenAm.html() = localStorage.getItem("messageThree"); 
-Twelve.html() = localStorage.getItem("messageFour"); 
-onePM.html() = localStorage.getItem("messageFive"); 
-twoPm.html() = localStorage.getItem("messageSix"); 
-threePM.html() = localStorage.getItem("messageSeven"); 
-fourPM.html() = localStorage.getItem("messageEight"); 
-fivePM.html() = localStorage.getItem("messageNine"); 
