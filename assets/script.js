@@ -32,6 +32,7 @@ $(document).ready(function () {
 })
 });
 
+console.log(moment().hour())
 
 // Appends it to text field 
 currentTime.appendTo('.currentDay')
@@ -74,13 +75,33 @@ fourPM.text(Times[7]).attr("class", "hour")
 fivePM.text(Times[8]).attr("class", "hour")
 
 
-$('#nineAm').html() = localStorage.getItem("fucking hell");
+var currentHour = moment().hour();
+var textInput = $('textarea');
+textInput.each(function () {
+    var hour = $(this).attr("class")
+    $(this).val(localStorage.getItem(hour))
+})
+textInput.each(function (textarea){
+    var currentTextarea = parseInt($(this).attr("class"))
+    if(currentHour > currentTextarea) {
+        $(this).addClass("past")
+    } else if (currentHour === currentTextarea) {
+        $(this).removeClass("past")
+        $(this).addClass("present")
+    } else {
+        $(this).removeClass("present")
+        $(this).removeClass("past")
+        $(this).addClass("future")
+    }
+})
 
-// console.log(eventone)
+console.log($('.saveBtn'))
+$('.saveBtn').on("click", function (){
+    var value = $(this).siblings("textarea").val()
+    var time = $(this).siblings("textarea").attr("class").split(" ")[0]
+    localStorage.setItem(time, value)
+    console.log(time, value)
+})
 
-/* var event_serialized = JSON.stringify(Userdata.Events[0]);
-console.log(event_serialized) */
 
-// localStorage.setItem("messageOne", JSON.stringify(messageOne))
-// save data to local storage 
 
