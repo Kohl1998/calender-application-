@@ -30,7 +30,11 @@ Please refer to the LICENSE in the repo.
 
 ## Features
 
-The application isn't fully functional, I still have a few things to update. 
+As a user you can utilise this application as a daily planner for your work days, by filling in the text boxes. Also, you can save the data with the save button, which allows you to come back to the data after refreshing the page. 
+
+Another feature this application has to offer is updates to the user interface by updating the times blocks based on the current times. 
+
+[![calender-application-moment-js.jpg](https://i.postimg.cc/xdr326VN/calender-application-moment-js.jpg)](https://postimg.cc/9Dp7PtMc)
 
 ## Link
 
