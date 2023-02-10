@@ -10,26 +10,6 @@ $(document).ready(function () {
         };
     update();
     setInterval(update, 1000);
-    
-    // Selectors for textarea elements
-    var Userdata = {
-        Events: {
-            inputOne: $('#nineAm').val(),
-            inputTwo: $('#tenAm').val(),
-            inputThree: $('#elevenAm').val(),
-            inputFour: $('#Twelve').val(),
-            inputFive: $('#onePM').val(),
-            inputSix: $('#twoPm').val(),
-            inputSeven: $('#threePM').val(),
-            inputEight: $('#fourPM').val(),
-            inputNine: $('#fivePM').val(),
-        }
-    }
-    // event listener to store user
-    $('button').on('click', function () {
-        var eventone = JSON.stringify(Userdata.Events.inputOne);
-        localStorage.setItem("eventone", eventone) 
-})
 });
 
 console.log(moment().hour())
