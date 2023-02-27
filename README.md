@@ -26,7 +26,7 @@ I used GeekForGeeks for support - https://www.geeksforgeeks.org/how-to-convert-n
 
 ## License
 
-Please refer to the LICENSE in the repo.
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Features
 
